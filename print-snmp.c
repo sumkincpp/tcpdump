@@ -664,6 +664,9 @@ asn1_print(netdissect_options *ndo,
 	uint32_t asnlen = elem->asnlen;
 	uint32_t i;
 
+	if (ndo->ndo_vflag)
+		ND_PRINT((ndo, "%s: ", Application[elem->id]));
+
 	switch (elem->type) {
 
 	case BE_OCTET:
